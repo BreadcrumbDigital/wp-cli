@@ -445,6 +445,9 @@ class Runner {
 
 		$source = implode( "\n", $lines_to_run );
 		$source = Utils\replace_path_consts( $source, $wp_config_path );
+
+		//AWK added as a test - TODO needs to be checked and other code removed if it works
+		require($wp_config_path);
 		return preg_replace( '|^\s*\<\?php\s*|', '', $source );
 	}
 
